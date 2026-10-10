@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trafalgar - Virtual Healthcare for You</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/CSS/main.css">\
+  <link rel="stylesheet" href="/CSS/normalize.css">
+  <!-- Google Fonts - Mulish -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="container navbar">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <span class="logo-badge">T</span>
+        <span class="logo-text">Trafalgar</span>
+      </a>
+
+      <!-- Navigation Drawer -->
+      <nav class="nav-menu" id="navMenu">
+        <button class="close-btn" id="closeBtn" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#find-a-doctor" class="nav-link">Find a doctor</a></li>
+          <li class="nav-item"><a href="#apps" class="nav-link">Apps</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li class="nav-item"><a href="#about-us" class="nav-link">About us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Button -->
+      <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- 50% Semi-transparent dark Overlay -->
+      <div class="overlay" id="overlay"></div>
+    </div>
+  </header>
+
+  <main class="hero-section">
+    <!-- Dot Pattern Background Decorative SVG -->
+    <svg class="dot-pattern-bg" width="131" height="115" viewBox="0 0 131 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#E5E7EB">
+        <circle cx="6" cy="6" r="5"/><circle cx="36" cy="6" r="5"/><circle cx="66" cy="6" r="5"/><circle cx="96" cy="6" r="5"/><circle cx="126" cy="6" r="5"/>
+        <circle cx="6" cy="32" r="5"/><circle cx="36" cy="32" r="5"/><circle cx="66" cy="32" r="5"/><circle cx="96" cy="32" r="5"/><circle cx="126" cy="32" r="5"/>
+        <circle cx="6" cy="58" r="5"/><circle cx="36" cy="58" r="5"/><circle cx="66" cy="58" r="5"/><circle cx="96" cy="58" r="5"/><circle cx="126" cy="58" r="5"/>
+        <circle cx="6" cy="84" r="5"/><circle cx="36" cy="84" r="5"/><circle cx="66" cy="84" r="5"/><circle cx="96" cy="84" r="5"/><circle cx="126" cy="84" r="5"/>
+        <circle cx="6" cy="110" r="5"/><circle cx="36" cy="110" r="5"/><circle cx="66" cy="110" r="5"/><circle cx="96" cy="110" r="5"/><circle cx="126" cy="110" r="5"/>
+      </g>
+    </svg>
+
+    <div class="container hero-grid">
+      <!-- Left Hero Text Content -->
+      <div class="hero-content">
+        <h1 class="hero-title">Virtual healthcare for you</h1>
+        <p class="hero-description">
+          Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone
+        </p>
+        <div class="btn-wrapper">
+          <button class="btn-fill" id="consultBtn">
+            Consult today
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-illustration">
+        <svg class="hero-svg float-main" viewBox="0 0 700 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background Soft Oval Glow Shapes -->
+          <ellipse cx="370" cy="310" rx="310" ry="180" fill="#EDF5FF"/>
+          <ellipse cx="490" cy="220" rx="190" ry="140" fill="#F3F8FF"/>
+
+          <!-- Floating Pink Heart Card -->
+          <g class="float-heart">
+            <path d="M120 180 C80 120, 10 200, 120 280 C230 200, 160 120, 120 180 Z" fill="#FFB7D5" opacity="0.9"/>
+            <path d="M120 195 C90 145, 30 210, 120 270 C210 210, 150 145, 120 195 Z" fill="#FF80AB"/>
+            <!-- ECG Pulse Line across Heart -->
+            <path d="M40 220 H90 L105 190 L120 240 L135 205 L145 220 H200" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- Floating Top Cyan Medical Cross Icon -->
+          <g class="float-cross">
+            <circle cx="490" cy="90" r="32" fill="#72DBF5"/>
+            <circle cx="490" cy="90" r="28" fill="#45CCED"/>
+            <path d="M490 76 V104 M476 90 H504" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+          </g>
+
+          <!-- Main Medical Chart Clipboard Container -->
+          <g filter="url(#dropShadow1)">
+            <rect x="260" y="150" width="230" height="290" rx="16" fill="#FFFFFF"/>
+            <rect x="260" y="150" width="230" height="290" rx="16" stroke="#458FF6" stroke-width="5"/>
+            
+            <!-- Clipboard Top Metal Clamp -->
+            <rect x="315" y="138" width="120" height="24" rx="6" fill="#458FF6"/>
+            <rect x="335" y="132" width="80" height="10" rx="4" fill="#2563EB"/>
+          </g>
+
+          <!-- Clipboard Content Details -->
+          <!-- Doctor Profile Avatar -->
+          <rect x="285" y="195" width="45" height="45" rx="10" fill="#EBF3FF"/>
+          <path d="M307.5 205 A8 8 0 1 0 307.5 221 A8 8 0 1 0 307.5 205 Z" fill="#458FF6"/>
+          <path d="M292 235 C292 227 298 223 307.5 223 C317 223 323 227 323 235 Z" fill="#458FF6"/>
+
+          <!-- Lines representing medical text on clipboard -->
+          <rect x="342" y="200" width="115" height="8" rx="4" fill="#458FF6"/>
+          <rect x="342" y="218" width="85" height="7" rx="3.5" fill="#B0D0FF"/>
+          <rect x="342" y="233" width="95" height="7" rx="3.5" fill="#B0D0FF"/>
+
+          <!-- Vital Graph Curve inside Clipboard -->
+          <rect x="285" y="260" width="180" height="90" rx="10" fill="#F8FAFC"/>
+          <path d="M295 315 L325 315 L340 280 L360 340 L380 295 L395 315 L455 315" stroke="#00C9A7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Status Indicators -->
+          <rect x="285" y="370" width="70" height="8" rx="4" fill="#458FF6"/>
+          <rect x="285" y="388" width="100" height="7" rx="3.5" fill="#E2E8F0"/>
+          <rect x="395" y="370" width="20" height="8" rx="4" fill="#72DBF5"/>
+
+          <!-- Right Floating Blue Shield Icon -->
+          <g class="float-shield">
+            <path d="M570 130 L630 150 V200 C630 240 570 270 570 270 C570 270 510 240 510 200 V150 L570 130 Z" fill="#458FF6"/>
+            <path d="M570 140 L620 157 V200 C620 233 570 258 570 258 C570 258 520 233 520 200 V157 L570 140 Z" fill="#2563EB"/>
+            <!-- Shield Checkmark -->
+            <path d="M550 195 L565 210 L592 180" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- Wallet / Mobile Card Accessory -->
+          <g filter="url(#dropShadow2)">
+            <rect x="500" y="270" width="140" height="130" rx="14" fill="#2563EB"/>
+            <rect x="490" y="290" width="140" height="110" rx="14" fill="#3B82F6"/>
+            <rect x="580" y="325" width="50" height="40" rx="8" fill="#60A5FA"/>
+            <circle cx="605" cy="345" r="7" fill="#FFFFFF"/>
+          </g>
+
+          <!-- Doctor Male Figure Illustration (Left Standing) -->
+          <g>
+            <!-- Head -->
+            <circle cx="230" cy="275" r="14" fill="#FFB899"/>
+            <path d="M218 270 C218 260 230 255 240 262 C244 266 242 274 242 274 Z" fill="#7C3AED"/>
+            <!-- Body Jacket -->
+            <path d="M210 360 L215 300 C215 292 222 288 230 288 C238 288 245 292 245 300 L250 360 Z" fill="#3B82F6"/>
+            <path d="M225 288 L230 315 L235 288 Z" fill="#FFFFFF"/>
+            <!-- Legs -->
+            <rect x="214" y="360" width="12" height="60" rx="5" fill="#1E3A8A"/>
+            <rect x="232" y="360" width="12" height="60" rx="5" fill="#1E3A8A"/>
+            <!-- Shoes -->
+            <ellipse cx="215" cy="422" rx="12" ry="5" fill="#2563EB"/>
+            <ellipse cx="242" cy="422" rx="12" ry="5" fill="#2563EB"/>
+          </g>
+
+          <!-- Doctor Female Figure Illustration (Right Standing) -->
+          <g>
+            <!-- Head -->
+            <circle cx="535" cy="285" r="14" fill="#FFC3A0"/>
+            <path d="M520 282 C520 268 535 262 548 270 C552 275 550 290 550 290 Z" fill="#1E293B"/>
+            <!-- Lab Coat / Pink Outfit -->
+            <path d="M515 370 L520 310 C520 302 527 298 535 298 C543 298 550 302 550 310 L555 370 Z" fill="#F472B6"/>
+            <!-- Legs -->
+            <rect x="522" y="370" width="10" height="55" rx="5" fill="#60A5FA"/>
+            <rect x="538" y="370" width="10" height="55" rx="5" fill="#60A5FA"/>
+            <!-- Shoes -->
+            <ellipse cx="522" cy="427" rx="10" ry="4" fill="#F472B6"/>
+            <ellipse cx="548" cy="427" rx="10" ry="4" fill="#F472B6"/>
+          </g>
+
+          <!-- Decorative Bottom Right Dot Pattern -->
+          <g class="float-element-pulse" fill="#C7D2FE">
+            <circle cx="610" cy="160" r="3"/><circle cx="625" cy="160" r="3"/><circle cx="640" cy="160" r="3"/>
+            <circle cx="610" cy="175" r="3"/><circle cx="625" cy="175" r="3"/><circle cx="640" cy="175" r="3"/>
+            <circle cx="610" cy="190" r="3"/><circle cx="625" cy="190" r="3"/><circle cx="640" cy="190" r="3"/>
+          </g>
+
+          <!-- SVG Filter Definitions for Soft Shadows -->
+          <defs>
+            <filter id="dropShadow1" x="240" y="120" width="270" height="340" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#458FF6" flood-opacity="0.12"/>
+            </filter>
+            <filter id="dropShadow2" x="470" y="250" width="180" height="170" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#2563EB" flood-opacity="0.18"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- ------------------------servis section---------------------- -->
+
+
+
+
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <!-- Fondagi to'lqinli figura va nuqtalar -->
+    <div class="bg-shape"></div>
+    <div class="dots-pattern"></div>
+
+    <div class="container">
+      
+      <!-- Sarlavha qismi -->
+      <div class="services-header animate-on-scroll fade-down">
+        <h2 class="services-title">Our services</h2>
+        <div class="title-line"></div>
+        <p class="services-subtitle">
+          We provide to you the best choices for you. Adjust it to your health needs and make sure your undergo treatment with our highly qualified doctors you can consult with us which type of service is suitable for your health
+        </p>
+      </div>
+
+      <!-- Kartochkalar to'plami (Grid) -->
+      <div class="services-grid">
+
+        <!-- 1-Karta (Search doctor - Chapdan chiqadi) -->
+        <div class="service-card animate-on-scroll slide-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="22" stroke="#458FF6" stroke-width="6"/>
+              <circle cx="36" cy="36" r="10" fill="#71D6F6"/>
+              <line x1="52" y1="52" x2="68" y2="68" stroke="#458FF6" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Search doctor</h3>
+          <p class="card-text">
+            Choose your doctor from thousands of specialist, general, and trusted hospitals
+          </p>
+        </div>
+
+        <!-- 2-Karta (Online pharmacy - Pastdan chiqadi) -->
+        <div class="service-card animate-on-scroll slide-up">
+          <div class="card-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="25" y="28" width="30" height="40" rx="8" fill="#71D6F6"/>
+              <rect x="28" y="16" width="24" height="12" rx="4" fill="#458FF6"/>
+              <path d="M34 48 H46 M40 42 V54" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Online pharmacy</h3>
+          <p class="card-text">
+            Buy your medicines with our mobile application with a simple delivery system
+          </p>
+        </div>
+
+        <!-- 3-Karta (Consultation - O'ngdan chiqadi) -->
+        <div class="service-card animate-on-scroll slide-right">
+          <div class="card-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="22" y="16" width="36" height="52" rx="6" stroke="#458FF6" stroke-width="5" fill="#FFFFFF"/>
+              <rect x="30" y="24" width="20" height="20" rx="4" fill="#71D6F6"/>
+              <line x1="30" y1="52" x2="50" y2="52" stroke="#458FF6" stroke-width="4" stroke-linecap="round"/>
+              <line x1="30" y1="59" x2="42" y2="59" stroke="#C5DCFA" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Consultation</h3>
+          <p class="card-text">
+            Free consultation with our trusted doctors and get the best recomendations
+          </p>
+        </div>
+
+        <!-- 4-Karta (Details info - Chapdan chiqadi) -->
+        <div class="service-card animate-on-scroll slide-left">
+          <div class="card-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="22" y="20" width="36" height="48" rx="6" stroke="#458FF6" stroke-width="4" fill="#FFFFFF"/>
+              <path d="M32 16 H48 V22 H32 Z" fill="#71D6F6"/>
+              <path d="M28 48 L35 48 L39 40 L43 54 L47 45 L50 48 L52 48" stroke="#458FF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Details info</h3>
+          <p class="card-text">
+            Free consultation with our trusted doctors and get the best recomendations
+          </p>
+        </div>
+
+        <!-- 5-Karta (Emergency care - Pastdan chiqadi) -->
+        <div class="service-card animate-on-scroll slide-up">
+          <div class="card-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="26" width="40" height="34" rx="8" fill="#458FF6"/>
+              <path d="M32 26 V20 C32 17 35 14 40 14 C45 14 48 17 48 20 V26" stroke="#458FF6" stroke-width="4"/>
+              <path d="M34 43 H46 M40 37 V49" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Emergency care</h3>
+          <p class="card-text">
+            You can get 24/7 urgent care for yourself or your children and your lovely family
+          </p>
+        </div>
+
+        <!-- 6-Karta (Tracking - O'ngdan chiqadi) -->
+        <div class="service-card animate-on-scroll slide-right">
+          <div class="card-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="22" y="16" width="36" height="48" rx="6" fill="#71D6F6"/>
+              <path d="M30 28 H38 M30 36 H50 M30 44 H46 M30 52 H40" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Tracking</h3>
+          <p class="card-text">
+            Track and save your medical history and health data
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tugma (Learn more) -->
+      <div class="services-action animate-on-scroll slide-up">
+        <button class="btn-learn-more" id="learnMoreBtn">Learn more</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- ------------------------------main section-------------------------- -->
+
+
+
+
+
+  <main class="main-content">
+
+    <!-- SECTION 1: Leading healthcare providers -->
+    <section class="info-section">
+      <div class="container info-container">
+        
+        <!-- Левая сторона: SVG Иллюстрация (Выезжает слева) -->
+        <div class="info-image-wrapper animate-on-scroll slide-left">
+          <svg class="info-svg" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="300" cy="250" r="180" fill="#E8F2FF" opacity="0.6"/>
+            
+            <!-- Планшет -->
+            <rect x="120" y="100" width="220" height="280" rx="16" fill="#FFFFFF" stroke="#458FF6" stroke-width="6"/>
+            <rect x="150" y="90" width="160" height="20" rx="6" fill="#71D6F6"/>
+            <circle cx="160" cy="150" r="18" fill="#458FF6" opacity="0.2"/>
+            <rect x="190" y="140" width="100" height="10" rx="5" fill="#458FF6"/>
+            <rect x="190" y="160" width="60" height="8" rx="4" fill="#C5DCFA"/>
+            <path d="M150 220 H310" stroke="#E5E9F2" stroke-width="2"/>
+            <path d="M150 260 H180 L190 230 L205 290 L220 240 L230 265 L240 260 H310" stroke="#458FF6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <!-- Лекарственная бутылочка -->
+            <rect x="360" y="160" width="90" height="150" rx="12" fill="#71D6F6"/>
+            <rect x="375" y="140" width="60" height="20" rx="4" fill="#458FF6"/>
+            <rect x="380" y="210" width="50" height="30" rx="6" fill="#FFFFFF"/>
+            <path d="M395 225 H415 M405 215 V235" stroke="#458FF6" stroke-width="4" stroke-linecap="round"/>
+
+            <!-- Колбы с жидкостью (Анимированные) -->
+            <g class="floating-flask">
+              <path d="M80 230 L110 320 C115 330 105 340 90 340 H50 C35 340 25 330 30 320 L60 230 Z" fill="#FF8DB3" opacity="0.8"/>
+              <path d="M60 200 H80 V230 H60 Z" fill="#C5DCFA"/>
+            </g>
+
+            <!-- Шприц -->
+            <g class="floating-syringe">
+              <rect x="300" y="180" width="20" height="120" rx="4" transform="rotate(-30 300 180)" fill="#FFFFFF" stroke="#458FF6" stroke-width="4"/>
+              <path d="M280 140 L310 190" stroke="#71D6F6" stroke-width="6" stroke-linecap="round"/>
+            </g>
+
+            <!-- Персонажи -->
+            <!-- Врач слева -->
+            <g class="character">
+              <circle cx="110" cy="235" r="12" fill="#FFA382"/>
+              <path d="M95 255 C95 250 125 250 125 255 L120 320 H100 Z" fill="#458FF6"/>
+              <path d="M100 320 L95 370 H107 L110 330 L113 370 H125 L120 320 Z" fill="#1F1534"/>
+            </g>
+            <!-- Врач справа -->
+            <g class="character">
+              <circle cx="280" cy="245" r="10" fill="#FFA382"/>
+              <path d="M268 262 C268 258 292 258 292 262 L288 320 H272 Z" fill="#FF8DB3"/>
+              <path d="M272 320 L268 370 H278 L280 330 L282 370 H292 L288 320 Z" fill="#1F1534"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Правая сторона: Текст и кнопка (Выезжает справа) -->
+        <div class="info-content animate-on-scroll slide-right">
+          <h2 class="info-title">Leading healthcare <br>providers</h2>
+          <div class="title-line"></div>
+          <p class="info-text">
+            Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone. To us, it's not just work. We take pride in the solutions we deliver
+          </p>
+          <button class="btn-outline" id="learnMoreBtn">Learn more</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: Download our mobile apps -->
+    <section class="info-section">
+      <div class="container info-container reverse-mobile">
+
+        <!-- Левая сторона: Текст и кнопка (Выезжает слева) -->
+        <div class="info-content animate-on-scroll slide-left">
+          <h2 class="info-title">Download our <br>mobile apps</h2>
+          <div class="title-line"></div>
+          <p class="info-text">
+            Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedious form, long calls, or administrative hassle) and securely
+          </p>
+          <button class="btn-outline btn-icon" id="downloadBtn">
+            <span>Download</span>
+            <svg class="download-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 2V11M8 11L4 7M8 11L12 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Правая сторона: SVG Иллюстрация (Выезжает справа) -->
+        <div class="info-image-wrapper animate-on-scroll slide-right">
+          <!-- Фоновые точки справа -->
+          <div class="dots-grid"></div>
+
+          <svg class="info-svg" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="320" cy="250" r="190" fill="#E8F2FF" opacity="0.6"/>
+
+            <!-- Мобильный телефон -->
+            <rect x="230" y="100" width="160" height="300" rx="24" fill="#FFFFFF" stroke="#458FF6" stroke-width="6"/>
+            <rect x="280" y="112" width="60" height="6" rx="3" fill="#E5E9F2"/>
+
+            <!-- Доктор из телефона -->
+            <g class="doctor-out">
+              <circle cx="310" cy="180" r="22" fill="#FFA382"/>
+              <path d="M270 210 Q 310 190 350 210 L340 330 H280 Z" fill="#458FF6"/>
+              <!-- Вытянутая рука -->
+              <path d="M250 240 Q 200 230 170 200" stroke="#458FF6" stroke-width="12" stroke-linecap="round"/>
+              <circle cx="170" cy="200" r="10" fill="#FFA382"/>
+            </g>
+
+            <!-- Медицинская карта (Слева сверху) -->
+            <rect x="120" y="90" width="110" height="130" rx="10" fill="#FFFFFF" stroke="#71D6F6" stroke-width="4"/>
+            <path d="M140 120 H180 M140 140 H200 M140 160 H170" stroke="#458FF6" stroke-width="4" stroke-linecap="round"/>
+
+            <!-- Сердце (Анимированное) -->
+            <g class="floating-heart">
+              <path d="M420 200 C400 170, 360 180, 360 210 C360 240, 420 280, 420 280 C420 280, 480 240, 480 210 C480 180, 440 170, 420 200 Z" fill="#FF8DB3"/>
+              <path d="M380 220 Q 400 210, 415 225 T 445 215 T 470 220" stroke="#FFFFFF" stroke-width="3" fill="none"/>
+            </g>
+
+            <!-- Банка с таблетками и капсулы -->
+            <rect x="330" y="280" width="70" height="100" rx="10" fill="#71D6F6"/>
+            <rect x="340" y="265" width="50" height="15" rx="3" fill="#458FF6"/>
+            <rect x="350" y="320" width="30" height="20" fill="#FFFFFF"/>
+            
+            <!-- Капсула на переднем плане -->
+            <rect x="260" y="360" width="50" height="22" rx="11" transform="rotate(-15 260 360)" fill="#458FF6"/>
+            <rect x="285" y="360" width="25" height="22" rx="11" transform="rotate(-15 260 360)" fill="#71D6F6"/>
+
+            <!-- Девушка у колбы -->
+            <g class="character">
+              <circle cx="115" cy="290" r="10" fill="#FFA382"/>
+              <path d="M105 305 C105 300 125 300 125 305 L120 350 H110 Z" fill="#FF8DB3"/>
+              <path d="M110 350 L108 400 H115 L117 360 L120 400 H127 L122 350 Z" fill="#458FF6"/>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+
+  <!-- -------------------------------------slayd section--------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <div class="container">
+      
+      <!-- Slayder Karkasi -->
+      <div class="slider-card">
+        
+        <!-- Orqa fondagi nuqtalar dekoratsiyasi -->
+        <div class="card-dots top-dots"></div>
+        <div class="card-dots bottom-dots"></div>
+
+        <h2 class="slider-title">What our customer are saying</h2>
+        <div class="slider-line"></div>
+
+        <!-- Slaydlar konteyneri -->
+        <div class="slider-wrapper">
+          
+          <!-- 1-Slayd -->
+          <div class="slide active">
+            <div class="slide-profile">
+              <div class="avatar-box">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300" alt="Edward Newgate">
+              </div>
+              <div class="profile-info">
+                <h3 class="author-name">Edward Newgate</h3>
+                <p class="author-role">Founder Circle</p>
+              </div>
+            </div>
+            <div class="slide-quote">
+              <p>
+                “Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedious form, long calls, or administrative hassle) and securely”
+              </p>
+            </div>
+          </div>
+
+          <!-- 2-Slayd -->
+          <div class="slide">
+            <div class="slide-profile">
+              <div class="avatar-box">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300" alt="Cynthia Young">
+              </div>
+              <div class="profile-info">
+                <h3 class="author-name">Cynthia Young</h3>
+                <p class="author-role">VP of Product</p>
+              </div>
+            </div>
+            <div class="slide-quote">
+              <p>
+                “The healthcare solutions provided by Trafalgar have revolutionized how we interact with our patients. Fast, secure, and incredibly reliable service every single time.”
+              </p>
+            </div>
+          </div>
+
+          <!-- 3-Slayd -->
+          <div class="slide">
+            <div class="slide-profile">
+              <div class="avatar-box">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300" alt="Marcus Vance">
+              </div>
+              <div class="profile-info">
+                <h3 class="author-name">Marcus Vance</h3>
+                <p class="author-role">Lead Analyst</p>
+              </div>
+            </div>
+            <div class="slide-quote">
+              <p>
+                “Connecting with doctors online reduced our administrative overhead significantly. Highly recommended for anyone seeking modern healthcare options.”
+              </p>
+            </div>
+          </div>
+
+          <!-- 4-Slayd -->
+          <div class="slide">
+            <div class="slide-profile">
+              <div class="avatar-box">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="Sophia Chen">
+              </div>
+              <div class="profile-info">
+                <h3 class="author-name">Sophia Chen</h3>
+                <p class="author-role">Operations Manager</p>
+              </div>
+            </div>
+            <div class="slide-quote">
+              <p>
+                “Instant doctor access and online prescription tracking have made our family health management completely seamless. Exceptional experience!”
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Boshqaruv tugmalari va Nuqtalar -->
+      <div class="slider-controls">
+        <button class="nav-arrow prev-btn" id="prevBtn" aria-label="Previous slide">
+          <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 9H2M2 9L10 1M2 9L10 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="dots-wrapper" id="dotsWrapper"></div>
+
+        <button class="nav-arrow next-btn" id="nextBtn" aria-label="Next slide">
+          <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 9H26M26 9L18 1M26 9L18 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ----------------------------articles section----------------------------- -->
+
+
+
+
+
+
+
+
+
+
+  <!-- ARTICLES SECTION -->
+  <section class="articles-section">
+    <!-- Orqa fondagi bezak nuqtalar va shakllar -->
+    <div class="bg-dots"></div>
+    <div class="bg-shape"></div>
+
+    <div class="container">
+      
+      <!-- Sarlavha -->
+      <div class="section-header">
+        <h2 class="section-title">Check out our latest article</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Kartochkalar Setkasi -->
+      <div class="articles-grid">
+        
+        <!-- 1-Kartochka (Chapdan chiqadi) -->
+        <article class="article-card animate-on-scroll slide-left">
+          <div class="card-image">
+            <img src="/image/ukolqilish.png" alt="Disease detection">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Disease detection, check up in the laboratory</h3>
+            <p class="card-text">In this case, the role of the health laboratory is very important to do a disease detection...</p>
+            <a href="#" class="read-more-link">
+              <span>Read more</span>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#458FF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2-Kartochka (O'rtada, pastdan/sekin ko'tariladi) -->
+        <article class="article-card animate-on-scroll slide-bottom">
+          <div class="card-image">
+            <img src="/image/doxtirkorish.png" alt="Herbal medicines">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Herbal medicines that are safe for consumption</h3>
+            <p class="card-text">Herbal medicine is very widely used at this time because of its very good for your health...</p>
+            <a href="#" class="read-more-link">
+              <span>Read more</span>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#458FF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3-Kartochka (O'ngdan chiqadi) -->
+        <article class="article-card animate-on-scroll slide-right">
+          <div class="card-image">
+            <img src="/image/masajqilish.png" alt="Natural care">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Natural care for healthy facial skin</h3>
+            <p class="card-text">A healthy lifestyle should start from now and also for your skin health. There are same...</p>
+            <a href="#" class="read-more-link">
+              <span>Read more</span>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#458FF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pastki "View all" tugmasi -->
+      <div class="articles-btn-wrapper animate-on-scroll fade-in">
+        <button class="btn-outline-primary" id="viewAllBtn">View all</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- --------------------------footer---------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <!-- Orqa fondagi bezak nuqtalar -->
+    <div class="footer-dots left-dots"></div>
+    <div class="footer-dots right-dots"></div>
+
+    <div class="container footer-container">
+      
+      <!-- 1-Ustun: Logo va Ma'lumot (Chapdan chiqadi) -->
+      <div class="footer-col footer-brand animate-on-scroll slide-left">
+        <a href="#" class="footer-logo">
+          <span class="logo-circle">T</span>
+          <span class="logo-text">Trafalgar</span>
+        </a>
+        <p class="brand-description">
+          Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone
+        </p>
+        <p class="copyright-text">
+          ©Trafalgar PTY LTD 2020. All rights reserved
+        </p>
+      </div>
+
+      <!-- 2-Ustun: Company (Pastdan sekin chiqadi) -->
+      <div class="footer-col animate-on-scroll slide-bottom">
+        <h4 class="footer-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Find a doctor</a></li>
+          <li><a href="#">Apps</a></li>
+        </ul>
+      </div>
+
+      <!-- 3-Ustun: Region (Pastdan sekin chiqadi) -->
+      <div class="footer-col animate-on-scroll slide-bottom delay-1">
+        <h4 class="footer-title">Region</h4>
+        <ul class="footer-links">
+          <li><a href="#">Indonesia</a></li>
+          <li><a href="#">Singapore</a></li>
+          <li><a href="#">Hongkong</a></li>
+          <li><a href="#">Canada</a></li>
+        </ul>
+      </div>
+
+      <!-- 4-Ustun: Help (O'ngdan chiqadi) -->
+      <div class="footer-col animate-on-scroll slide-right">
+        <h4 class="footer-title">Help</h4>
+        <ul class="footer-links">
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Contact support</a></li>
+          <li><a href="#">Instructions</a></li>
+          <li><a href="#">How it works</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/JS/main.js"></script>
+</body>
+</html>

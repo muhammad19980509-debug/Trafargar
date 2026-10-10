@@ -1,0 +1,1743 @@
+
+      
+    :root {  
+      --primary-color: #458FF6;
+      --primary-gradient-start: #5a9df8;
+      --primary-gradient-end: #2b6bd1;
+      --text-dark: #000000;
+      --text-heading: #1F1534;
+      --text-muted: #7D7987;
+      --bg-light: #FFFFFF;
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+      --transition-fast: 0.3s ease;
+      --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Mulish', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-heading);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      position: relative;
+      width: 100%;
+      background-color: var(--bg-light);
+      padding: 32px 0 20px;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      user-select: none;
+      transition: transform var(--transition-fast);
+    }
+
+    .logo:hover {
+      transform: translateY(-1px);
+    }
+
+    .logo-badge {
+      width: 41px;
+      height: 41px;
+      background: linear-gradient(135deg, #458FF6 0%, #2563eb 100%);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 6px 14px rgba(69, 143, 246, 0.35);
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: #233348;
+      letter-spacing: -0.4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    .nav-link {
+      position: relative;
+      text-decoration: none;
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 400;
+      padding: 6px 0;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 6px;
+      height: 6px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      opacity: 0;
+      transition: transform var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background: var(--primary-color);
+      border-radius: 4px;
+      transition: width var(--transition-fast);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #1F1534;
+      font-weight: 700;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      transform: translateX(-50%) scale(1);
+      opacity: 1;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .burger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 102;
+    }
+
+    .burger-btn span {
+      width: 100%;
+      height: 3px;
+      background-color: #233348;
+      border-radius: 4px;
+      transition: all var(--transition-fast);
+    }
+
+    .close-btn {
+      display: none;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 38px;
+      height: 38px;
+      background-color: #F0F4FA;
+      border: none;
+      border-radius: 50%;
+      color: var(--text-heading);
+      font-size: 20px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .close-btn:hover {
+      background-color: #E2E8F0;
+      color: #E53E3E;
+      transform: rotate(90deg);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--overlay-bg);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-fast), visibility var(--transition-fast);
+      z-index: 1000;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero-section {
+      position: relative;
+      padding: 40px 0 100px;
+      min-height: calc(100vh - 100px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Top Left Dot Grid Decorative Accent */
+    .dot-pattern-bg {
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 500px;
+      opacity: 0;
+      transform: translateX(-80px);
+      animation: slideInLeft 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--text-heading);
+      margin-bottom: 25px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-description {
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 1.68;
+      color: var(--text-muted);
+      margin-bottom: 45px;
+    }
+
+    .btn-wrapper {
+      display: inline-block;
+      position: relative;
+    }
+
+    .btn-fill {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 46px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      background-color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      border-radius: 55px;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(69, 143, 246, 0.3);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+      z-index: 1;
+    }
+
+    /* Background smooth fill layer */
+    .btn-fill::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 320%;
+      height: 320%;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+      z-index: -1;
+    }
+
+    .btn-fill:hover {
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-fill:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .btn-fill:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Ripple Click Effect Span */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: rippleEffect 0.6s linear;
+      background-color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .hero-illustration {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateX(80px);
+      animation: slideInRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: auto;
+      max-width: 620px;
+      filter: drop-shadow(0 15px 30px rgba(69, 143, 246, 0.08));
+    }
+
+    /* Continuous floating animation for illustration keyframes */
+    .float-main {
+      animation: floatSmooth 6s ease-in-out infinite;
+    }
+
+    .float-heart {
+      animation: floatSubtle 4.5s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .float-shield {
+      animation: floatReverse 5s ease-in-out infinite alternate;
+    }
+
+    .float-cross {
+      animation: pulseGlow 3.5s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .float-element-pulse {
+      animation: pulsePulse 2.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-80px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(80px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes floatSmooth {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    @keyframes floatSubtle {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-10px) rotate(2deg);
+      }
+    }
+
+    @keyframes floatReverse {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(12px);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        transform: scale(1);
+        filter: drop-shadow(0 2px 5px rgba(69, 143, 246, 0.2));
+      }
+      100% {
+        transform: scale(1.06);
+        filter: drop-shadow(0 6px 15px rgba(69, 143, 246, 0.4));
+      }
+    }
+
+    @keyframes pulsePulse {
+      0% {
+        opacity: 0.8;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .burger-btn, .close-btn {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--bg-light);
+        z-index: 1001;
+        padding: 90px 32px 40px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+      }
+
+      .nav-link {
+        font-size: 20px;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-link::before {
+        display: none;
+      }
+
+      .hero-section {
+        padding: 20px 0 60px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 38px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+        margin-bottom: 35px;
+      }
+
+      .dot-pattern-bg {
+        top: -10px;
+        left: -40px;
+        scale: 0.7;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .btn-fill {
+        width: 100%;
+        padding: 16px 32px;
+      }
+
+      .btn-wrapper {
+        width: 100%;
+      }
+    }
+
+
+
+
+
+
+   /* --------------------------- servaic section---------------------- */
+
+
+
+
+
+   /* SERVICES SECTION */
+.services-section {
+  position: relative;
+  padding: 80px 0 100px;
+  background-color: #ffffff;
+}
+
+/* FON ORQA BEZAKLARI */
+.bg-shape {
+  position: absolute;
+  top: 15%;
+  left: -5%;
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232, 242, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dots-pattern {
+  position: absolute;
+  bottom: 120px;
+  right: 5%;
+  width: 120px;
+  height: 100px;
+  background-image: radial-gradient(#d5e4fb 25%, transparent 25%);
+  background-size: 16px 16px;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+/* HEADER QISMI */
+.services-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.services-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.title-line {
+  width: 56px;
+  height: 2px;
+  background-color: #000000;
+  margin: 0 auto 25px;
+  border-radius: 2px;
+}
+
+.services-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #7d7987;
+  line-height: 1.7;
+}
+
+/* GRID VA KARTALAR */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 30px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+/* KARTA USLUBI VA HOVER ANIMATSIYALARI */
+.service-card {
+  background: #ffffff;
+  padding: 45px 35px 35px;
+  border-radius: 20px;
+  box-shadow: 10px 40px 50px rgba(229, 233, 242, 0.5);
+  border: 1px solid rgba(230, 235, 245, 0.6);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(69, 143, 246, 0.15);
+  border-color: rgba(69, 143, 246, 0.3);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .card-icon {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 14px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .card-title {
+  color: #458ff6;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: #7d7987;
+  line-height: 1.7;
+}
+
+/* TUGMA (LEARN MORE) */
+.services-action {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-learn-more {
+  background: #ffffff;
+  color: #458ff6;
+  border: 1.5px solid #458ff6;
+  padding: 14px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 55px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  background: #458ff6;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(69, 143, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-learn-more:active {
+  transform: translateY(0);
+}
+
+/* ANIMATSIYALAR (SCROLL / LOAD) */
+.animate-on-scroll {
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+.slide-up {
+  transform: translateY(60px);
+}
+
+.fade-down {
+  transform: translateY(-40px);
+}
+
+/* SCROLL QILINGANDA ANIMATSIYANI UYLASH KLASSI */
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* RESPONSIVE (MOSLASHUVCHANLIK) */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-title {
+    font-size: 28px;
+  }
+
+  .services-subtitle {
+    font-size: 14px;
+  }
+
+  .service-card {
+    padding: 30px 25px;
+  }
+
+  .btn-learn-more {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------------main section------------------------ */
+
+
+
+
+
+
+
+/* MAIN CONTENT & SECTIONS */
+.main-content {
+  padding: 60px 0;
+}
+
+.info-section {
+  padding: 60px 0;
+  position: relative;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ТЕКСТОВЫЙ БЛОК */
+.info-content {
+  flex: 1;
+  max-width: 480px;
+}
+
+.info-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.title-line {
+  width: 56px;
+  height: 2px;
+  background-color: #000000;
+  margin-bottom: 25px;
+  border-radius: 2px;
+}
+
+.info-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #7d7987;
+  margin-bottom: 35px;
+}
+
+/* КНОПКА С HOVER-АНИМАЦИЕЙ */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 40px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #458ff6;
+  background-color: #ffffff;
+  border: 1.5px solid #458ff6;
+  border-radius: 55px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(69, 143, 246, 0.08);
+}
+
+.btn-outline:hover {
+  background-color: #458ff6;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(69, 143, 246, 0.3);
+}
+
+.btn-outline:active {
+  transform: translateY(-1px);
+}
+
+/* Анимация стрелки на кнопке Download */
+.download-arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-outline:hover .download-arrow {
+  transform: translateY(3px);
+}
+
+/* ИЛЛЮСТРАЦИИ И ВНУТРЕННИЕ АНИМАЦИИ */
+.info-image-wrapper {
+  flex: 1.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.info-svg {
+  width: 100%;
+  height: auto;
+  max-width: 550px;
+}
+
+/* Декоративные точки */
+.dots-grid {
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(#d5e4fb 25%, transparent 25%);
+  background-size: 16px 16px;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* Плавное покачивание элементов иллюстрации */
+.floating-flask {
+  animation: floatSoft 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.floating-syringe {
+  animation: floatSoft 5s ease-in-out infinite 0.5s;
+  transform-origin: center;
+}
+
+.floating-heart {
+  animation: floatSoft 3.5s ease-in-out infinite 1s;
+  transform-origin: center;
+}
+
+@keyframes floatSoft {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* АНИМАЦИИ ПО СУЙПУ / СКРОЛЛУ (Slide Left & Right) */
+.animate-on-scroll {
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease;
+  will-change: transform, opacity;
+}
+
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+/* Класс активируемый через JS */
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* РЕСПОНСИВНОСТЬ (АДАПТИВ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА) */
+@media (max-width: 992px) {
+  .info-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .info-container.reverse-mobile {
+    flex-direction: column-reverse;
+  }
+
+  .info-content {
+    max-width: 100%;
+  }
+
+  .title-line {
+    margin: 0 auto 25px;
+  }
+
+  .info-title {
+    font-size: 30px;
+  }
+
+  .info-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-section {
+    padding: 40px 0;
+  }
+
+  .info-title {
+    font-size: 26px;
+  }
+
+  .btn-outline {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------slayd section-------------------- */
+
+
+
+
+
+
+
+
+/* SECTION USLUBI */
+.testimonials-section {
+  padding: 80px 0;
+}
+
+/* KARTA SHAKLI (GRADIENT FON) */
+.slider-card {
+  position: relative;
+  background: linear-gradient(208.18deg, #67C3F3 -9.8%, #5A98F2 82.7%);
+  border-radius: 24px;
+  padding: 60px 100px;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(90, 152, 242, 0.25);
+}
+
+/* ORQA FON NUQTALARI */
+.card-dots {
+  position: absolute;
+  width: 105px;
+  height: 80px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 20%, transparent 20%);
+  background-size: 15px 15px;
+  pointer-events: none;
+}
+
+.top-dots {
+  top: 30px;
+  right: 30px;
+}
+
+.bottom-dots {
+  bottom: 20px;
+  left: -20px;
+  opacity: 0.5;
+}
+
+/* TITLE VA AJRATUVCHI CHIZIQ */
+.slider-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.slider-line {
+  width: 56px;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 0 auto 50px;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* SLAYD RO'YXATI */
+.slider-wrapper {
+  position: relative;
+  min-height: 160px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.slide.prev-exit {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-40px);
+}
+
+/* PROFIL QISMI (AVATAR VA ISM) */
+.slide-profile {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 0 0 320px;
+}
+
+.avatar-box {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.slide:hover .avatar-box {
+  transform: scale(1.05);
+}
+
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.author-role {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* IQTIBOS MATNI */
+.slide-quote {
+  flex: 1;
+}
+
+.slide-quote p {
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* CONTROLS (TUGMALAR VA NUQTALAR) */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.nav-arrow {
+  background: transparent;
+  border: none;
+  color: #458FF6;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.nav-arrow:hover {
+  color: #233348;
+  transform: scale(1.2);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+}
+
+.dots-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #458FF6;
+  opacity: 0.3;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.dot:hover {
+  opacity: 0.7;
+}
+
+/* RESPONSIVE (TELEFONLAR VA PLANSHETLAR UCHUN) */
+@media (max-width: 992px) {
+  .slider-card {
+    padding: 50px 40px;
+  }
+
+  .slide {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .slide-profile {
+    flex-direction: column;
+    flex: auto;
+  }
+
+  .slider-wrapper {
+    min-height: 280px;
+  }
+
+  .slide-quote p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-card {
+    padding: 35px 20px;
+    border-radius: 18px;
+  }
+
+  .slider-title {
+    font-size: 26px;
+  }
+
+  .avatar-box {
+    width: 90px;
+    height: 90px;
+  }
+
+  .author-name {
+    font-size: 18px;
+  }
+
+  .author-role {
+    font-size: 14px;
+  }
+
+  .slide-quote p {
+    font-size: 14px;
+  }
+
+  .slider-wrapper {
+    min-height: 320px;
+  }
+}
+
+
+
+
+
+
+/* ---------------------articles section------------------------ */
+
+
+
+
+
+/* SECTION STYLES */
+.articles-section {
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* FOONDEGI DEKORATIV ELEMENTLAR */
+.bg-dots {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  width: 100px;
+  height: 90px;
+  background-image: radial-gradient(#e0ecfc 25%, transparent 25%);
+  background-size: 16px 16px;
+  z-index: -1;
+}
+
+.bg-shape {
+  position: absolute;
+  top: 50px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: rgba(232, 242, 255, 0.5);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* SECTION TITLE */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.title-line {
+  width: 56px;
+  height: 2px;
+  background-color: #000000;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* ARTICLES GRID */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  margin-bottom: 70px;
+}
+
+/* ARTICLE CARD */
+.article-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 15px 50px 70px rgba(69, 143, 246, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.article-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+.card-body {
+  padding: 30px 32px 35px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #000000;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #7d7987;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* READ MORE LINK HOVER ANIMATION */
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  color: #458ff6;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.read-more-link svg path {
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #1f64c6;
+  gap: 18px;
+}
+
+.read-more-link:hover svg path {
+  stroke: #1f64c6;
+}
+
+/* BUTTON "VIEW ALL" */
+.articles-btn-wrapper {
+  text-align: center;
+}
+
+.btn-outline-primary {
+  padding: 15px 50px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #458ff6;
+  background-color: transparent;
+  border: 1.5px solid #458ff6;
+  border-radius: 55px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline-primary:hover {
+  background-color: #458ff6;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(69, 143, 246, 0.25);
+}
+
+.btn-outline-primary:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------ */
+/* SCROLL ANIMATION CLASSES (CHAPDAN/O'NGDAN CHIQISH) */
+/* ------------------------------------------------ */
+.animate-on-scroll {
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease;
+  will-change: transform, opacity;
+}
+
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+.slide-bottom {
+  transform: translateY(60px);
+}
+
+.fade-in {
+  transform: scale(0.95);
+}
+
+/* JS orqali qo'shiladigan faol sinf */
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* ------------------------------------------------ */
+/* RESPONSIVE DESIGN (TELEFON VA PLANSHETLAR UCHUN) */
+/* ------------------------------------------------ */
+@media (max-width: 992px) {
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .section-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .articles-section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .card-body {
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 19px;
+  }
+
+  .card-text {
+    font-size: 15px;
+  }
+
+  .btn-outline-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+
+
+
+
+
+
+/* -----------------------footer--------------- */
+
+
+
+
+
+
+
+
+
+
+/* FOOTER ASOSIY STILI (Gradient Fon) */
+.site-footer {
+  position: relative;
+  background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+  padding: 110px 0 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* DEKORATIV NUQTALAR */
+.footer-dots {
+  position: absolute;
+  width: 105px;
+  height: 115px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.3) 20%, transparent 20%);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+.left-dots {
+  bottom: 0;
+  left: -20px;
+}
+
+.right-dots {
+  top: 0;
+  right: -20px;
+}
+
+/* FOOTER GRID SETKASI */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  gap: 60px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* BRAND VA LOGO */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 22px;
+}
+
+.logo-circle {
+  width: 41px;
+  height: 41px;
+  background-color: #ffffff;
+  color: #5A98F2;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover .logo-circle {
+  transform: rotate(360deg);
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.brand-description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+  max-width: 390px;
+}
+
+.copyright-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: auto;
+}
+
+/* SARLAVHALAR VA HAVOLALAR */
+.footer-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+/* LINK HOVER ANIMATSIYASI */
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* ------------------------------------------------ */
+/* SCROLL ANIMATSIYALARI (CHAP/O'NG/PASTDAN CHIQISH) */
+/* ------------------------------------------------ */
+.animate-on-scroll {
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease;
+  will-change: transform, opacity;
+}
+
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+.slide-bottom {
+  transform: translateY(50px);
+}
+
+/* Delay (ketma-ket chiqishi uchun) */
+.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* ------------------------------------------------ */
+/* RESPONSIVE DESIGN (MOSLASHUVCHANLIK)            */
+/* ------------------------------------------------ */
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .site-footer {
+    padding: 80px 0 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .brand-description {
+    max-width: 100%;
+  }
+
+  .footer-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .footer-links a {
+    font-size: 16px;
+  }
+} 
